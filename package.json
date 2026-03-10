@@ -1,0 +1,17 @@
+{
+  "name": "world-cup-2026-agent",
+  "version": "1.0.0",
+  "description": "FIFA World Cup 2026 intelligence agent — standings, schedules, team stats, and live scores via x402 micropayments",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --watch index.ts"
+  },
+  "dependencies": {
+    "@lucid-agents/core": "^2.5.0",
+    "@lucid-agents/http": "^1.10.2",
+    "@lucid-agents/hono": "^0.9.6",
+    "@lucid-agents/payments": "^2.5.0",
+    "zod": "^4.0.0"
+  }
+}
