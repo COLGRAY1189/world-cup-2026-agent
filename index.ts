@@ -439,7 +439,14 @@ addEntrypoint({
 const port = parseInt(process.env.PORT ?? "3000");
 export default {
   port,
-  fetch: app.fetch,
+  fetch: (req: Request) => {
+    const url = new URL(req.url);
+    if (url.protocol === "http:") {
+      url.protocol = "https:";
+      return app.fetch(new Request(url.toString(), req));
+    }
+    return app.fetch(req);
+  },
 };
 
 console.log(`World Cup 2026 Agent running on http://localhost:${port}`);
